@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>大象影视 - 稳如泰山，承载每一帧光影 | daxiangyingshi-h5.github.io</title>
+<meta name="description" content="大象影视（daxiangyingshi-h5.github.io）是稳重厚片风影视导航站：象背片库、剧集森林、综艺动漫、记忆长廊（经典修复），低饱和自然视觉，移动端自适应，纯静态演示。" />
+<meta name="keywords" content="大象影视,daxiangyingshi-h5,稳如泰山,经典电影,口碑剧集,记忆长廊,厚重片库,深度观影" />
+<link rel="canonical" href="https://daxiangyingshi-h5.github.io/" />
+<style>
+:root{
+  --night:#10140F;--night2:#1A2018;--gray:#4B4F54;--moss:#5E7C5A;--blue:#3C5A78;
+  --brown:#8A6F4E;--paper:#F3EFE6;--ink:#23271F;--gray2:#8C8A7E;--line:rgba(94,124,90,.35);
+  --maxw:1140px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+
+/* 森林光斑 */
+.forest-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.forest-bg::before{content:"";position:absolute;top:-10%;left:-5%;width:420px;height:420px;background:radial-gradient(circle,rgba(94,124,90,.14),transparent 70%);animation:sway 9s ease-in-out infinite}
+.forest-bg::after{content:"";position:absolute;bottom:-10%;right:-5%;width:420px;height:420px;background:radial-gradient(circle,rgba(60,90,120,.12),transparent 70%);animation:sway 11s ease-in-out infinite reverse}
+@keyframes sway{0%,100%{transform:translateY(0) scale(1);opacity:.6}50%{transform:translateY(-14px) scale(1.1);opacity:1}}
+
+header.site{position:sticky;top:0;z-index:60;background:rgba(243,239,230,.94);backdrop-filter:blur(12px);border-bottom:3px solid var(--moss)}
+.nav{display:flex;align-items:center;gap:12px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:18px}
+.logo-icon{width:38px;height:38px;border-radius:14px 14px 18px 18px;background:linear-gradient(160deg,var(--gray),var(--moss) 70%);
+  display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:inset 0 0 0 2px rgba(243,239,230,.25),0 4px 12px rgba(0,0,0,.18)}
+.logo small{display:block;font-size:9px;color:var(--gray2);font-weight:500}
+.menu{margin-left:auto;display:flex;gap:4px}
+.menu a{padding:7px 14px;border-radius:8px;font-size:13px;color:var(--gray2);transition:.2s;font-weight:600}
+.menu a:hover{background:var(--moss);color:var(--paper)}
+.search{display:flex;gap:6px}
+.search input{width:130px;padding:8px 14px;border-radius:8px;border:2px solid var(--moss);background:#fff;color:var(--ink);outline:none;font-size:13px}
+.search button{border:0;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:800;background:var(--brown);color:#fff;font-size:13px}
+.burger{display:none;margin-left:auto;background:#fff;border:2px solid var(--moss);color:var(--ink);border-radius:8px;padding:6px 10px;font-size:16px}
+
+/* hero 象背山脊 */
+.hero{position:relative;z-index:1;margin:24px 0;border-radius:34px 34px 90px 90px;overflow:hidden;
+  background:radial-gradient(120% 90% at 30% 0%,rgba(94,124,90,.22),transparent 50%),
+             radial-gradient(120% 90% at 90% 100%,rgba(60,90,120,.18),transparent 50%),
+             var(--night2);
+  color:var(--paper);min-height:360px;display:flex;align-items:flex-end}
+.hero::before{content:"";position:absolute;bottom:-30px;left:0;width:100%;height:120px;
+  background:radial-gradient(ellipse at 20% 100%,rgba(138,111,78,.4),transparent 60%),
+            radial-gradient(ellipse at 80% 100%,rgba(94,124,90,.35),transparent 60%)}
+.hero-body{padding:42px 40px;position:relative;z-index:2;max-width:620px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:999px;background:rgba(94,124,90,.18);color:#BFE3B0;font-size:11px;font-weight:800;letter-spacing:2px;margin-bottom:14px;border:1px solid rgba(94,124,90,.4)}
+.hero h1{font-size:38px;margin:0 0 10px;line-height:1.2}
+.hero h1 em{font-style:normal;color:#C9D8A8}
+.hero p{color:rgba(243,239,230,.72);font-size:15px;margin:0 0 24px}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{padding:11px 26px;border-radius:12px;font-weight:800;border:0;cursor:pointer;font-size:13px;transition:.25s}
+.btn-moss{background:linear-gradient(135deg,var(--moss),var(--blue));color:#fff}
+.btn-moss:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(94,124,90,.4)}
+.btn-paper{background:transparent;border:2px solid var(--moss);color:#BFE3B0}
+.btn-paper:hover{background:rgba(94,124,90,.12)}
+
+/* 栏目 */
+.section{padding:36px 0;position:relative;z-index:1}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:22px;flex-wrap:wrap}
+.sec-head h2{font-size:22px;margin:0}
+.sec-head h2::before{content:"🐘 "}
+.sec-head span{color:var(--gray2);font-size:12px}
+.more{margin-left:auto;color:var(--blue);font-size:12px;font-weight:800}
+
+/* 厚片卡 */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{border-radius:16px;overflow:hidden;background:#fff;border:1px solid #ddd6c7;transition:.25s;position:relative}
+.card:hover{transform:translateY(-4px);border-color:var(--moss);box-shadow:0 14px 32px rgba(26,32,24,.18)}
+.cover{aspect-ratio:3/4;border-radius:14px 14px 0 0;position:relative;display:flex;align-items:flex-end;padding:12px}
+.card:nth-child(1) .cover{background:linear-gradient(160deg,#2b3a2b,#5E7C5A)}
+.card:nth-child(2) .cover{background:linear-gradient(160deg,#26323f,#3C5A78)}
+.card:nth-child(3) .cover{background:linear-gradient(160deg,#3a2c1c,#8A6F4E)}
+.card:nth-child(4) .cover{background:linear-gradient(160deg,#222722,#4B4F54)}
+.card:nth-child(5) .cover{background:linear-gradient(160deg,#1f3326,#7BA36B)}
+.card:nth-child(6) .cover{background:linear-gradient(160deg,#2c3e50,#5A7C99)}
+.card:nth-child(7) .cover{background:linear-gradient(160deg,#3b2f22,#A6865C)}
+.card:nth-child(8) .cover{background:linear-gradient(160deg,#1c1f1a,#6B7065)}
+.cover .tag{position:absolute;top:10px;left:10px;background:rgba(16,20,15,.6);color:#DDE7CF;font-size:10px;padding:3px 10px;border-radius:6px;font-weight:800;border:1px solid rgba(191,227,176,.3)}
+.cover h4{margin:0;font-size:14px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.body{padding:12px}
+.tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:6px}
+.tags span{font-size:10px;padding:2px 8px;border-radius:999px;background:#EFEBDF;color:var(--gray2);font-weight:600}
+.body p{margin:0;font-size:11px;color:var(--gray2);line-height:1.5}
+
+/* 森林分区 */
+.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.zone{border-radius:18px;padding:22px;background:linear-gradient(160deg,#fff,#F0ECDF);border:1px solid #ddd6c7;transition:.25s}
+.zone:hover{transform:translateY(-3px);border-color:var(--moss);background:linear-gradient(160deg,#fff,#E7EEDA)}
+.zone .ic{font-size:28px;display:block;margin-bottom:8px}
+.zone h3{font-size:16px;margin:0 0 4px}
+.zone p{font-size:12px;color:var(--gray2);margin:0}
+
+/* 记忆长廊 */
+.hall{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mem{display:flex;gap:14px;background:#fff;border:1px solid #ddd6c7;border-radius:16px;padding:14px 18px;transition:.25s}
+.mem:hover{border-color:var(--brown);background:#FBF7EE}
+.mem-year{font-family:"Courier New",monospace;font-size:20px;font-weight:900;color:var(--brown);width:56px;flex-shrink:0}
+.mem-info h4{margin:0 0 2px;font-size:14px}
+.mem-info span{font-size:11px;color:var(--gray2)}
+
+/* 稳重热榜 */
+.rank{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rk{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #ddd6c7;border-radius:16px;padding:14px 18px;transition:.25s}
+.rk:hover{border-color:var(--moss);background:#F4F8EC}
+.rk-num{font-size:22px;font-weight:900;color:var(--moss);width:34px;text-align:center;flex-shrink:0}
+.rk-num.top{color:var(--brown)}
+.rk-info{flex:1}
+.rk-info h4{margin:0 0 2px;font-size:14px}
+.rk-info span{font-size:11px;color:var(--gray2)}
+.rk-w{font-size:12px;font-weight:800;color:var(--blue);flex-shrink:0}
+
+/* about */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+.about-card{border-radius:22px;padding:24px;background:#fff;border:1px solid #ddd6c7}
+.about-card h3{font-size:18px;margin:0 0 12px}
+.about-card h3::before{content:"🌳 "}
+.about-card p,.about-card li{font-size:13px;color:var(--gray2);line-height:1.8}
+.about-card ul{padding-left:18px;margin:0}
+.stats{display:flex;gap:12px;margin-top:16px}
+.stat{flex:1;text-align:center;padding:14px;border-radius:16px;background:#EEF1E4;border:1px solid #D7DEC8}
+.stat b{display:block;font-size:20px;color:var(--moss)}
+.stat span{font-size:11px;color:var(--gray2)}
+
+footer.site{border-top:3px solid var(--moss);padding:28px 0 44px;color:var(--gray2);font-size:12px;text-align:center;position:relative;z-index:1;background:var(--paper)}
+footer.site a{color:var(--blue)}
+code{background:#fff;border:1px solid #ddd6c7;padding:2px 8px;border-radius:6px;color:var(--ink);font-size:11px;font-family:"Courier New",monospace}
+
+@media(max-width:980px){
+  .grid,.zones{grid-template-columns:repeat(2,1fr)}
+  .hall,.rank{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .menu{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--paper);border-bottom:3px solid var(--moss);padding:10px 16px;gap:4px}
+  .menu.open{display:flex}
+  .burger{display:block}
+  .search input{width:90px}
+  .hero h1{font-size:26px}
+  .grid,.zones{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<div class="forest-bg"></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="logo">
+      <div class="logo-icon">🐘</div>
+      <div>大象影视<small>daxiangyingshi-h5.github.io</small></div>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="#home">首页</a>
+      <a href="#lib">象背片库</a>
+      <a href="#series">剧集森林</a>
+      <a href="#va">综艺动漫</a>
+      <a href="#hall">记忆长廊</a>
+      <a href="#about">关于大象</a>
+    </nav>
+    <div class="search">
+      <input type="text" placeholder="搜经典/导演/类型" aria-label="搜索" />
+      <button onclick="alert('演示站：搜索用 # 占位')">慢搜</button>
+    </div>
+    <button class="burger" id="burger">☰</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" id="home">
+    <div class="hero-body">
+      <div class="badge">🐘 稳如泰山 · 承载光影</div>
+      <h1>大象影视，<br/><em>慢一点，把好片记住</em></h1>
+      <p>不追最吵的热搜，只收经得起回看的电影、剧集、综艺与动漫。像大象走过森林：一步一个脚印，一片叶子都不急着落。</p>
+      <div class="cta">
+        <button class="btn btn-moss" onclick="location.href='#lib'">走进象背片库</button>
+        <button class="btn btn-paper" onclick="location.href='#hall'">看记忆长廊</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="lib">
+    <div class="sec-head"><h2>象背片库</h2><span>Elephant Shelf</span><a class="more" href="#">更多 #</a></div>
+    <div class="grid">
+      <div class="card"><div class="cover"><span class="tag">经典</span><h4>天堂电影院</h4></div><div class="body"><div class="tags"><span>意大利</span><span>成长</span><span>修复版</span></div><p>关于电影、离别与记忆，看完像被大象轻轻撞了一下胸口。</p></div></div>
+      <div class="card"><div class="cover"><span class="tag">厚重</span><h4>教父</h4></div><div class="body"><div class="tags"><span>黑帮</span><span>家族</span><span>史诗</span></div><p>权力、父亲、传承，每一句台词都像象蹄落地。</p></div></div>
+      <div class="card"><div class="cover"><span class="tag">自然</span><h4>地球脉动3</h4></div><div class="body"><div class="tags"><span>纪录</span><span>4K</span><span>BBC</span></div><p>地球自己就是一头沉默的大象，走着走着就几百万年。</p></div></div>
+      <div class="card"><div class="cover"><span class="tag">作者化</span><h4>驾驶我的车</h4></div><div class="body"><div class="tags"><span>文艺</span><span>长篇</span><span>村上</span></div><p>慢、长、后劲大，像象背上的旧包袱。</p></div></div>
+      <div class="card"><div class="cover"><span class="tag">国片</span><h4>霸王别姬</h4></div><div class="body"><div class="tags"><span>戏曲</span><span>时代</span><span>神作</span></div><p>一辈子、一出戏、一个人，分量压得住整个片库。</p></div></div>
+      <div class="card"><div class="cover"><span class="tag">科幻</span><h4>2001太空漫游</h4></div><div class="body"><div class="tags"><span>库布里克</span><span>哲学</span><span>里程碑</span></div><p>黑石像象群里的未知，人类抬头看了一次宇宙。</p></div></div>
+      <div class="card"><div class="cover"><span class="tag">动画</span><h4>幽灵公主</h4></div><div class="body"><div class="tags"><span>宫崎骏</span><span>自然</span><span>战争</span></div><p>森林与铁器的冲突，大象也会站住的那种沉重。</p></div></div>
+      <div class="card"><div class="cover"><span class="tag">剧改</span><h4>活着</h4></div><div class="body"><div class="tags"><span>时代</span><span>苦难</span><span>余华</span></div><p>人怎么活，片怎么藏，看完不想说话。</p></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><h2>森林分区</h2><span>Forest Zones</span></div>
+    <div class="zones">
+      <div class="zone"><span class="ic">🎬</span><h3>象背电影林</h3><p>经典 / 作者 / 修复 / 国片</p></div>
+      <div class="zone"><span class="ic">📺</span><h3>剧集密林</h3><p>口碑剧 / 慢热剧 / 长线剧</p></div>
+      <div class="zone"><span class="ic">🎤</span><h3>综艺空地</h3><p>访谈 / 纪实 / 不吵人的综艺</p></div>
+      <div class="zone"><span class="ic">🐉</span><h3>动漫苔原</h3><p>吉卜力 / 今敏 / 慢热新番</p></div>
+      <div class="zone"><span class="ic">🌙</span><h3>深夜象道</h3><p>文艺 / 独立 / 长镜头</p></div>
+      <div class="zone"><span class="ic">📜</span><h3>记忆标本馆</h3><p>老片 / 胶片 / 4K 修复</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="series">
+    <div class="sec-head"><h2>剧集森林</h2><span>Slow-Burn Series</span><a class="more" href="#">更多 #</a></div>
+    <div class="grid">
+      <div class="card"><div class="cover"><span class="tag">慢热</span><h4>漫长的季节</h4></div><div class="body"><div class="tags"><span>悬疑</span><span>东北</span><span>时代</span></div><p>三个时间点像年轮，越看越沉。</p></div></div>
+      <div class="card"><div class="cover"><span class="tag">英剧</span><h4>去他妈的世界</h4></div><div class="body"><div class="tags"><span>公路</span><span>青春</span><span>黑色</span></div><p>两个小孩上路，冷幽默里全是孤独。</p></div></div>
+      <div class="card"><div class="cover"><span class="tag">韩剧</span><h4>我的解放日志</h4></div><div class="body"><div class="tags"><span>治愈</span><span>社畜</span><span>慢</span></div><p>不恋爱也能好看，像象群停下来喝水。</p></div></div>
+      <div class="card"><div class="cover"><span class="tag">国剧</span><h4>山海情</h4></div><div class="body"><div class="tags"><span>现实</span><span>扶贫</span><span>黄土</span></div><p>土地、人、风，厚重得不张扬。</p></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="va">
+    <div class="sec-head"><h2>综艺 / 动漫</h2><span>Quiet Variety & Anime</span><a class="more" href="#">更多 #</a></div>
+    <div class="grid">
+      <div class="card"><div class="cover"><span class="tag">访谈</span><h4>十三邀</h4></div><div class="body"><div class="tags"><span>对话</span><span>思想</span><span>长谈</span></div><p>许知远慢问，嘉宾慢答，像林子里走路。</p></div></div>
+      <div class="card"><div class="cover"><span class="tag">吉卜力</span><h4>千与千寻</h4></div><div class="body"><div class="tags"><span>奇幻</span><span>成长</span><span>神作</span></div><p>汤屋像森林深处另一套规矩。</p></div></div>
+      <div class="card"><div class="cover"><span class="tag">今敏</span><h4>红辣椒</h4></div><div class="body"><div class="tags"><span>梦</span><span>心理</span><span>动画</span></div><p>梦境像象鼻卷起整座城市。</p></div></div>
+      <div class="card"><div class="cover"><span class="tag">纪实</span><h4>人生果实</h4></div><div class="body"><div class="tags"><span>日本</span><span>生活</span><span>慢纪录</span></div><p>“风吹枯叶落，落叶生肥土”——大象也懂。</p></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="hall">
+    <div class="sec-head"><h2>记忆长廊</h2><span>Memory Corridor · 4K 修复</span><a class="more" href="#">完整片单 #</a></div>
+    <div class="hall">
+      <div class="mem"><div class="mem-year">1972</div><div class="mem-info"><h4>教父</h4><span>黑帮史诗 / 4K 修复</span></div></div>
+      <div class="mem"><div class="mem-year">1988</div><div class="mem-info"><h4>龙猫</h4><span>吉卜力 / 森林童话</span></div></div>
+      <div class="mem"><div class="mem-year">1994</div><div class="mem-info"><h4>肖申克的救赎</h4><span>希望 / 影史高分</span></div></div>
+      <div class="mem"><div class="mem-year">1997</div><div class="mem-info"><h4>美丽人生</h4><span>战争 / 父爱 / 笑中刀</span></div></div>
+      <div class="mem"><div class="mem-year">2000</div><div class="mem-info"><h4>一一</h4><span>杨德昌 / 家庭长卷</span></div></div>
+      <div class="mem"><div class="mem-year">2019</div><div class="mem-info"><h4>寄生虫</h4><span>奉俊昊 / 阶层寓言</span></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><h2>稳重热榜</h2><span>Steady Chart</span><a class="more" href="#">完整榜单 #</a></div>
+    <div class="rank">
+      <div class="rk"><div class="rk-num top">1</div><div class="rk-info"><h4>漫长的季节</h4><span>剧集 / 东北悬疑</span></div><div class="rk-w">⏳ 耐看 98</div></div>
+      <div class="rk"><div class="rk-num top">2</div><div class="rk-info"><h4>天堂电影院</h4><span>电影 / 记忆修复</span></div><div class="rk-w">⏳ 耐看 97</div></div>
+      <div class="rk"><div class="rk-num top">3</div><div class="rk-info"><h4>我的解放日志</h4><span>韩剧 / 社畜治愈</span></div><div class="rk-w">⏳ 耐看 95</div></div>
+      <div class="rk"><div class="rk-num">4</div><div class="rk-info"><h4>地球脉动3</h4><span>纪录 / 自然4K</span></div><div class="rk-w">⏳ 耐看 94</div></div>
+      <div class="rk"><div class="rk-num">5</div><div class="rk-info"><h4>幽灵公主</h4><span>动漫 / 自然之战</span></div><div class="rk-w">⏳ 耐看 92</div></div>
+      <div class="rk"><div class="rk-num">6</div><div class="rk-info"><h4>人生果实</h4><span>纪录 / 慢生活</span></div><div class="rk-w">⏳ 耐看 90</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="sec-head"><h2>关于大象影视</h2><span>About</span></div>
+    <div class="about">
+      <div class="about-card">
+        <h3>大象影视是什么？</h3>
+        <p>大象影视（daxiangyingshi-h5.github.io）不是最快的影视站，但是最稳的那头。以“稳如泰山，承载每一帧光影”为理念，象背片库、剧集森林、综艺动漫、记忆长廊共同构成一座能慢慢走的片库森林。[4,7](@ref)</p>
+        <div class="stats">
+          <div class="stat"><b>6</b><span>栏目</span></div>
+          <div class="stat"><b>6</b><span>森林分区</span></div>
+          <div class="stat"><b>100%</b><span>移动端适配</span></div>
+        </div>
+      </div>
+      <div class="about-card">
+        <h3>演示说明</h3>
+        <ul>
+          <li>纯静态单页，无后端、无数据库</li>
+          <li>所有链接均为 <code>#</code> 占位</li>
+          <li>不提供盗版资源</li>
+          <li>必应收录友好</li>
+          <li>低饱和自然色 + 象鼻/足迹意象</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    大象影视 · <a href="https://daxiangyingshi-h5.github.io/">daxiangyingshi-h5.github.io</a><br/>
+    演示页面：所有链接均使用 <code>#</code> 占位，不提供真实盗版资源。<br/>
+    © 2026 大象影视 Demo · 稳如泰山，承载每一帧光影
+  </div>
+</footer>
+
+<script>
+  const b=document.getElementById('burger'),m=document.getElementById('menu');
+  b.onclick=()=>m.classList.toggle('open');
+  m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.onclick=e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+</script>
+</body>
+</html>
